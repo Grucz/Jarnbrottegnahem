@@ -413,6 +413,39 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--ink-soft);
 }
 
+/* --- Numrerade steg ------------------------------------------------------ */
+
+.steg {
+  list-style: none;
+  counter-reset: steg;
+  margin: 0 0 1.6em;
+  padding: 0;
+}
+
+.steg li {
+  counter-increment: steg;
+  position: relative;
+  padding: 0 0 18px 52px;
+}
+
+.steg li::before {
+  content: counter(steg);
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--rubrik);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  background: var(--tegel);
+  border-radius: 50%;
+}
+
 /* --- Notis: det som är viktigt att inte missa ---------------------------- */
 
 .notis {
