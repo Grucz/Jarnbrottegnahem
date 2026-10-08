@@ -324,6 +324,28 @@ img { max-width: 100%; height: auto; display: block; }
 
 .sidtopp .ingress { max-width: var(--smal); margin-bottom: 0; }
 
+/* --- Arkivbild i full bredd --------------------------------------------- */
+
+.arkivbild {
+  margin: 0;
+  background: var(--ink);
+}
+
+.arkivbild img {
+  width: 100%;
+  max-height: 72vh;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.arkivbild figcaption {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  padding-top: 16px;
+  padding-bottom: 20px;
+  max-width: var(--bredd);
+}
+
 /* --- Listor med avgifter, kontakter och styrelse ------------------------- */
 
 .lista {
@@ -352,6 +374,44 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .belopp { float: right; font-weight: 700; }
+
+/* Länk till en pdf i listan över handlingar */
+
+.fil {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 14px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.fil::before {
+  content: "PDF";
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--tegel);
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+
+.fil__namn {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--linje);
+}
+
+.fil:hover .fil__namn { text-decoration-color: var(--tegel); }
+
+.fil__info {
+  flex-basis: 100%;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
 
 /* --- Notis: det som är viktigt att inte missa ---------------------------- */
 
