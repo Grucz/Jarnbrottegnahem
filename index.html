@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://DIN-ADRESS/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -43,7 +43,7 @@
     <div class="behallare hero__text">
       <p class="hero__ovanpa">Järnbrott, Göteborg &middot; sedan 1952</p>
       <h1>Femton minuter till havet, femton minuter till stan</h1>
-      <p class="hero__under">Egnahemsföreningen är grannarna i Järnbrott som håller ihop området: gemensamma inköp, loppis i september, tomten i december och en fond som täcker skador på servisledningen.</p>
+      <p class="hero__under">Egnahemsföreningen finns till för oss i radhusen och villorna, och syftet med den är att bidra till gemenskap och trygghet i området.</p>
     </div>
   </section>
 
@@ -51,8 +51,8 @@
   <section class="sektion">
     <div class="behallare">
       <div class="text-kolumn">
-      <p class="ingress">Föreningen finns till för oss som bor här, och den finns kvar så länge vi vill ha den. Vi ordnar jord på våren och ved på hösten, vi håller igång loppisen och tomtens runda, och vi för områdets talan mot kommunen i frågor om trafik, parkering och sophantering.</p>
-      <p>Alla som äger eller bor i ett hus i Järnbrott är välkomna som medlemmar. Ju fler vi är, desto tyngre väger vi när något behöver drivas, och desto mer kan vi göra tillsammans.</p>
+      <p class="ingress">Vi beställer planteringsjord ihop på våren och ved på hösten, vi håller igång loppisen, samordnar Halloween och ser till att tomten samlar in önskelistor i december.</p>
+      <p>Alla som äger eller bor i ett hus i Järnbrott är välkomna som medlemmar. Ju fler vi är desto mer kan vi göra tillsammans.</p>
       </div>
     </div>
   </section>
@@ -66,8 +66,8 @@
       <div class="arshjul">
         <img src="bilder/arshjul.jpg" alt="Årshjul som visar föreningens återkommande aktiviteter månad för månad: styrelsemöten, Järnbrottsnytt, jordleverans i mars, årsmöte i april, loppmarknad och vedleverans i september, Halloween i oktober och Tomten kommer i december.">
         <div>
-          <p>Det mesta i föreningen återkommer varje år. Jorden kommer i mars, årsmötet hålls i april, loppisen ligger första söndagen i september och veden levereras i oktober. Däremellan kommer Järnbrottsnytt i brevlådan fem gånger om året.</p>
-          <p>Styrelsen träffas ungefär varannan månad. Har du en fråga som borde upp på ett styrelsemöte hör du av dig, så tar vi den där.</p>
+          <p>Det mesta i föreningen återkommer varje år. Jorden kommer i mars, årsmötet hålls i april, loppisen ligger första söndagen i september och veden levereras i oktober. Halloweenaktiviteten sker runt allhelgona och tomten kommer i december. Däremellan kommer Järnbrottsnytt i brevlådan fem gånger om året.</p>
+          <p>Styrelsen träffas ungefär varannan månad. Har du en fråga som borde upp på ett styrelsemöte hör du av dig, så tar vi den där. Vill du engagera dig finns det alltid plats för fler, antingen i styrelsen eller kring en enskild fråga.</p>
           <p><a href="kontakt.html">Kontakta styrelsen</a></p>
         </div>
       </div>
@@ -81,8 +81,18 @@
        2. Klistra in det och ändra datum, rubrik och text.
        3. data-slut är sista dagen aktiviteten ska synas på sidan.
           Skrivs alltid som ÅÅÅÅ-MM-DD, till exempel 2027-04-15.
+
        Du behöver INTE ta bort gamla aktiviteter. Sidan döljer dem
        själv dagen efter data-slut, och sorterar listan i datumordning.
+
+       Delarna i ett block:
+       - datum       stora siffran och månaden i vänsterkanten
+       - h3          aktivitetens namn
+       - p.tid       klockslag, hoppa över raden om tid saknas
+       - p           den korta texten som alltid syns
+       - details     den hopfällda texten. Raden i <summary> är det
+                     man klickar på. Behövs ingen längre text går
+                     hela <details>-blocket att ta bort.
        =========================================================== -->
   <div class="remsa remsa--sol">
     <div class="behallare"><h2>På gång just nu</h2></div>
@@ -114,6 +124,34 @@
           <div>
             <h3>Veden levereras</h3>
             <p>Säckarna körs hem till din uppfart av Ågrenskas dagliga verksamhet.</p>
+          </div>
+        </li>
+
+        <li data-slut="2026-10-31">
+          <p class="datum">31<span>okt</span></p>
+          <div>
+            <h3>Halloween i Järnbrott</h3>
+            <p class="tid">Klockan 17.00–20.00</p>
+            <p>Barnen går runt i området, utspökade till något läskigt, och frågar om vi föredrar bus eller godis. Det brukar bli en rolig kväll.</p>
+            <details>
+              <summary>Så funkar kvällen</summary>
+              <p>Vill du locka dem till ditt hus? Pynta ordentligt eller ställ ut en lykta, då vet de godissugna små varelserna vart de ska.</p>
+              <p>Föräldrar: hjälp era små att förstå upplägget, så att de bara knackar på där de är välkomna.</p>
+            </details>
+          </div>
+        </li>
+
+        <li data-slut="2026-12-06">
+          <p class="datum">6<span>dec</span></p>
+          <div>
+            <h3>Tomten kommer till Järnbrott</h3>
+            <p class="tid">Söndag, klockan 17.00–18.00</p>
+            <p>Tomten kommer för att samla in alla barns och vuxnas önskelistor. Vi samlas på gräsplanen ovanför Mellanvågsgatan, mot åsen.</p>
+            <details>
+              <summary>Så funkar besöket</summary>
+              <p>Det bjuds på julstämning, pepparkakor och varm dryck för både barn och vuxna.</p>
+              <p>Vid 18.00 behöver tomten skynda vidare till nästa ställe, så kom gärna i tid.</p>
+            </details>
           </div>
         </li>
 

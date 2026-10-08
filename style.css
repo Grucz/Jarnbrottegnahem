@@ -14,6 +14,11 @@
   --tegel: #9d4227;        /* tegeltaken, länkar och siffror */
   --linje: #ddcbaa;
 
+  /* Rubriktypsnitt. Vill du byta räcker det att ändra namnet här,
+     och namnet i <link>-raden högst upp i varje html-fil.
+     Alternativ som också fungerar: "Zilla Slab" (kraftigare, mer teknisk). */
+  --rubrik: "Fraunces", Georgia, serif;
+
   --bredd: 1080px;
   --smal: 680px;
 }
@@ -37,10 +42,12 @@ body {
 h1, h2, h3 { line-height: 1.15; margin: 0 0 0.4em; }
 
 h1, h2 {
-  font-family: "Bodoni Moda", Georgia, serif;
+  font-family: var(--rubrik);
   font-weight: 600;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.005em;
 }
+
+h1 { font-weight: 700; }
 
 h3 {
   font-size: 1.25rem;
@@ -226,7 +233,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .datum {
   flex: 0 0 92px;
-  font-family: "Bodoni Moda", Georgia, serif;
+  font-family: var(--rubrik);
+  font-weight: 600;
   font-size: 2rem;
   line-height: 1;
   color: var(--tegel);
@@ -242,14 +250,136 @@ img { max-width: 100%; height: auto; display: block; }
   margin-top: 6px;
 }
 
-.kalender h3 { margin-bottom: 0.25em; }
+.kalender h3 { margin-bottom: 0.2em; }
 .kalender p { margin: 0; color: var(--ink-soft); }
+
+.tid {
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tegel) !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Hopfällbar text i kalendariet */
+
+.kalender details { margin-top: 12px; }
+
+.kalender summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--tegel);
+  padding: 4px 0;
+}
+
+.kalender summary::-webkit-details-marker { display: none; }
+
+.kalender summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.18s ease;
+}
+
+.kalender details[open] summary::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+.kalender summary:hover { color: var(--ink); }
+
+.kalender details > p {
+  margin-top: 10px;
+  padding-left: 16px;
+  border-left: 3px solid var(--band);
+}
 
 .tomt {
   background: var(--kort);
   border: 1px dashed var(--tegel);
   padding: 24px;
   color: var(--ink-soft);
+}
+
+/* --- Undersidornas topp ------------------------------------------------- */
+
+.sidtopp {
+  padding: 56px 0 44px;
+  border-bottom: 1px solid var(--linje);
+}
+
+.sidtopp h1 {
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  max-width: 18ch;
+  margin-bottom: 0.3em;
+}
+
+.sidtopp .ingress { max-width: var(--smal); margin-bottom: 0; }
+
+/* --- Listor med avgifter, kontakter och styrelse ------------------------- */
+
+.lista {
+  list-style: none;
+  margin: 0 0 1.6em;
+  padding: 0;
+  max-width: var(--smal);
+}
+
+.lista li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--linje);
+}
+
+.lista li:first-child { border-top: 1px solid var(--linje); }
+
+.lista strong { font-weight: 700; }
+
+.lista .roll {
+  display: block;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tegel);
+  margin-bottom: 2px;
+}
+
+.belopp { float: right; font-weight: 700; }
+
+/* --- Notis: det som är viktigt att inte missa ---------------------------- */
+
+.notis {
+  background: var(--kort);
+  border-left: 5px solid var(--sol);
+  padding: 20px 24px;
+  max-width: var(--smal);
+  margin: 0 0 2em;
+}
+
+.notis p { margin: 0; }
+
+/* --- Betalning med qr-skylt ---------------------------------------------- */
+
+.betalning {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 40px;
+  align-items: start;
+}
+
+.betalning img { width: 100%; }
+
+.konto {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 0.6em;
 }
 
 /* --- Kort och knappar ------------------------------------------------------ */
@@ -293,7 +423,7 @@ img { max-width: 100%; height: auto; display: block; }
 .medlem .knapp { margin-top: 8px; }
 
 .etab {
-  font-family: "Bodoni Moda", Georgia, serif;
+  font-family: var(--rubrik);
   font-style: italic;
   color: var(--tegel);
   font-size: 1.05rem;
@@ -330,6 +460,9 @@ img { max-width: 100%; height: auto; display: block; }
   .hero__text { padding: 96px 0 44px; }
   .arshjul { grid-template-columns: 1fr; gap: 28px; }
   .medlem { padding: 28px; }
+  .betalning { grid-template-columns: 1fr; gap: 28px; }
+  .betalning img { max-width: 220px; }
+  .sidtopp { padding: 40px 0 32px; }
   .kalender li { gap: 16px; }
   .datum { flex-basis: 68px; font-size: 1.6rem; }
 }
