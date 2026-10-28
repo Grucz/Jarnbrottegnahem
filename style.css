@@ -531,8 +531,6 @@ img { max-width: 100%; height: auto; display: block; }
 
 .betala {
   max-width: var(--smal);
-  border-top: 1px solid var(--linje);
-  padding-top: 20px;
   font-size: 0.98rem;
   color: var(--ink-soft);
 }
@@ -666,8 +664,35 @@ img { max-width: 100%; height: auto; display: block; }
 
 .sidfot__rader {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.sidfot__namn p { margin: 0; }
+
+.sidfot__namn img {
+  width: 210px;
+  margin: 8px 0 14px;
+  opacity: 0.88;
+}
+
+.sidfot__lankar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 24px;
+}
+
+.sidfot__lankar p { margin: 0; line-height: 2.1; }
+
+.sidfot a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.sidfot a:hover {
+  color: var(--tegel);
+  border-bottom-color: var(--tegel);
 }
 
 /* --- Mobil ---------------------------------------------------------------- */
@@ -685,6 +710,9 @@ img { max-width: 100%; height: auto; display: block; }
   .sidtopp { padding: 40px 0 32px; }
   .kalender li { gap: 16px; }
   .datum { flex-basis: 68px; font-size: 1.6rem; }
+  .sidfot__rader { grid-template-columns: 1fr; gap: 28px; }
+  .sidfot__lankar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sidfot__namn img { width: 190px; }
 }
 
 /* --- Lugnare rörelse för den som valt det -------------------------------- */
