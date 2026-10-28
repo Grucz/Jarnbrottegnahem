@@ -471,6 +471,75 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--ink-soft);
 }
 
+/* --- Hopfällbar text utanför kalendariet --------------------------------- */
+
+.sponsor { margin-bottom: 1.5em; }
+
+.sponsor summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  color: var(--tegel);
+  padding: 4px 0;
+}
+
+.sponsor summary::-webkit-details-marker { display: none; }
+
+.sponsor summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.18s ease;
+}
+
+.sponsor[open] summary::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+.sponsor summary:hover { color: var(--ink); }
+
+.sponsor > :not(summary) {
+  margin-left: 17px;
+  padding-left: 16px;
+  border-left: 3px solid var(--band);
+}
+
+.sponsor > p:first-of-type { margin-top: 14px; }
+
+/* Skiss över nyhetsfoldern */
+
+.folder {
+  margin: 0 0 1.2em;
+  max-width: 440px;
+}
+
+.folder svg { width: 100%; height: auto; display: block; }
+
+.folder figcaption {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 10px;
+}
+
+/* --- Betalningsrad på kontaktsidan --------------------------------------- */
+
+.betala {
+  max-width: var(--smal);
+  border-top: 1px solid var(--linje);
+  padding-top: 20px;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+
+.betala p { margin: 0; }
+.betala strong { color: var(--ink); }
+
 /* --- Numrerade steg ------------------------------------------------------ */
 
 .steg {
