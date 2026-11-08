@@ -1,0 +1,31 @@
+{
+  "name": "Järnbrotts egnahemsförening",
+  "short_name": "Järnbrott",
+  "description": "Föreningen för oss som bor i radhusen och villorna i Järnbrott.",
+  "lang": "sv-SE",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fdf6e9",
+  "theme_color": "#14211f",
+  "icons": [
+    {
+      "src": "bilder/ikon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "bilder/ikon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "bilder/ikon-maskbar-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
